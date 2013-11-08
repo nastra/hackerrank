@@ -20,7 +20,13 @@ public class Pairs {
 
     private static final Integer ONE = 1;
 
-    /* Complete this function */
+    /**
+     * Algorithm runs in time O(n) and requires O(n) space.
+     *
+     * @param a The input array
+     * @param k The difference
+     * @return The number of pairs that have a difference of K
+     */
     static int pairs(int[] a, int k) {
         if (null == a || a.length == 0) {
             return 0;
