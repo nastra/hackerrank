@@ -39,9 +39,8 @@ public class MissingNumbers {
             Map.Entry<Integer, Integer> entry = iter.next();
             if (entry.getValue() > 0) {
                 set.add(entry.getValue());
-            } else {
-                map.remove(entry.getValue());
-            }
+            } 
+            iter.remove();
         }
         return set;
     }
