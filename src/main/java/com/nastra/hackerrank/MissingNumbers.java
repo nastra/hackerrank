@@ -38,7 +38,7 @@ public class MissingNumbers {
         while (iter.hasNext()) {
             Map.Entry<Integer, Integer> entry = iter.next();
             if (entry.getValue() > 0) {
-                set.add(entry.getValue());
+                set.add(entry.getKey());
             } 
             iter.remove();
         }
