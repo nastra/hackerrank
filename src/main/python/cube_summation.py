@@ -6,13 +6,10 @@ See https://www.hackerrank.com/contests/101jan14/challenges/cube-summation for p
 
 if __name__ == '__main__':
     t = int(raw_input())
-    for i in range(0, t):
-        line = raw_input().split()
-        n = int(line[0])
-        m = int(line[1])
+    for i in xrange(0, t):
+        n, m = (int(i) for i in raw_input().split())
         matrix = x = np.zeros((n + 1, n + 1, n + 1))
-        total = 0
-        for j in range(0, m):
+        for j in xrange(0, m):
             op = raw_input().split()
             if 'UPDATE' == op[0]:
                 a = int(op[1])
@@ -27,7 +24,6 @@ if __name__ == '__main__':
                 d = int(op[4])
                 e = int(op[5])
                 f = int(op[6])
-                off = matrix[a:d + 1:1, b:e + 1:1, c:f + 1:1]
-                tot = np.sum(off)
+                tot = np.sum(matrix[a:d + 1:1, b:e + 1:1, c:f + 1:1])
                 print(int(tot))
 
