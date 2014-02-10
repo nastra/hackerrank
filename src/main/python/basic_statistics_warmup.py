@@ -14,8 +14,8 @@ def confidence_interval(x, std):
     return low, high
 
 
-number_of_values = int(raw_input())
-raw_in = raw_input()
+number_of_values = int(input())
+raw_in = input()
 num = [int(x) for x in raw_in.split(" ")]
 numbers = np.array(num)
 

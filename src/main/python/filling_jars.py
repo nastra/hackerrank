@@ -5,13 +5,13 @@ See https://www.hackerrank.com/contests/101jan14/challenges/filling-jars for pro
 """
 
 if __name__ == '__main__':
-    line = raw_input().split()
+    line = input().split()
     n = int(line[0])
     m = int(line[1])
 
     sum = 0
-    for x in xrange(0, m):
-        line = raw_input().split()
+    for x in range(0, m):
+        line = input().split()
         a = int(line[0])
         b = int(line[1])
         k = int(line[2])

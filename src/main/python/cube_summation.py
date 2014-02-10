@@ -5,12 +5,12 @@ See https://www.hackerrank.com/contests/101jan14/challenges/cube-summation for p
 """
 
 if __name__ == '__main__':
-    t = int(raw_input())
-    for i in xrange(0, t):
-        n, m = (int(i) for i in raw_input().split())
+    t = int(input())
+    for i in range(0, t):
+        n, m = (int(i) for i in input().split())
         matrix = x = np.zeros((n + 1, n + 1, n + 1))
-        for j in xrange(0, m):
-            op = raw_input().split()
+        for j in range(0, m):
+            op = input().split()
             if 'UPDATE' == op[0]:
                 a = int(op[1])
                 b = int(op[2])

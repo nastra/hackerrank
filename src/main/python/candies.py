@@ -29,12 +29,12 @@ def get_minimum_candies(candy, ratings, k):
 
 
 if __name__ == '__main__':
-    n = int(raw_input())
+    n = int(input())
     ratings = []
     candy = [1 for j in range(0, n + 1)]
 
-    for x in xrange(0, n):
-        rating = int(raw_input())
+    for x in range(0, n):
+        rating = int(input())
         ratings.append(rating)
     ratings.append(0)
     print(sum(get_minimum_candies(candy, ratings, n)) - 1)

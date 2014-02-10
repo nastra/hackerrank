@@ -23,9 +23,9 @@ def getMaxProfit(stockPrices, n):
 
 
 if __name__ == '__main__':
-    testcases = int(raw_input())
+    testcases = int(input())
 
-    for x in xrange(0, testcases):
-        n = int(raw_input())
-        prices = [int(p) for p in raw_input().split()]
+    for x in range(0, testcases):
+        n = int(input())
+        prices = [int(p) for p in input().split()]
         print(getMaxProfit(prices, n))

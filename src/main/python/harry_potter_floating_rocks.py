@@ -17,11 +17,11 @@ def gcd(a, b):
 if __name__ == '__main__':
     #from fractions import gcd
 
-    n = int(raw_input())
+    n = int(input())
 
     sum = 0
-    for x in xrange(0, n):
-        line = raw_input().split()
+    for x in range(0, n):
+        line = input().split()
         x1 = int(line[0])
         y1 = int(line[1])
         x2 = int(line[2])

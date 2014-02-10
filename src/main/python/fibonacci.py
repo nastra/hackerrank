@@ -47,10 +47,10 @@ def is_square(integer):
 
 
 if __name__ == "__main__":
-    n = int(raw_input())
+    n = int(input())
 
     for i in range(0, n):
-        x = long(raw_input())
+        x = int(input())
         result = isFibonacci(x)
         if (result):
             print("IsFibo")
