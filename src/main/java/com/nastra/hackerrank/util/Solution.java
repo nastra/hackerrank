@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 /**
- *
+ * 
  * @author nastra - Eduard Tudenhoefner
  */
 public class Solution {

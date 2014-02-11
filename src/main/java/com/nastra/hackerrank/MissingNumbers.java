@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- *
+ * 
  * @author nastra
  */
 public class MissingNumbers {
@@ -39,7 +39,7 @@ public class MissingNumbers {
             Map.Entry<Integer, Integer> entry = iter.next();
             if (entry.getValue() > 0) {
                 set.add(entry.getKey());
-            } 
+            }
             iter.remove();
         }
         return set;

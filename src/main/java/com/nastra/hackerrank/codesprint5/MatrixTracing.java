@@ -5,19 +5,19 @@ import java.util.Scanner;
 
 /**
  * Given below is a word from the English dictionary arranged as a matrix
- *
+ * 
  * MATHE ATHEM THEMA HEMAT EMATI MATIC ATICS
- *
+ * 
  * Tracing the matrix is starting from the top left position and at each step move either RIGHT or DOWN, to reach the bottom right of the matrix. It
  * is assured that any such tracing generates the same word. How many such tracings can be possible for a given word of length m+n-1 written as a
  * matrix of size m * n?
- *
+ * 
  * Input Format The first line of input contains an integer T. T test cases follow in each line. Each line contains 2 space separated integers m & n
  * indicating that the matrix written has m rows and each row has n characters.
- *
+ * 
  * Constraints 1 <= T <= 10^3 1 ≤ m,n ≤ 10^6
- *
- * @see https://www.hackerrank.com/contests/codesprint5/challenges/matrix-tracing
+ * 
+ * @see https ://www.hackerrank.com/contests/codesprint5/challenges/matrix-tracing
  * @author nastra - Eduard Tudenhoefner
  */
 public class MatrixTracing {
