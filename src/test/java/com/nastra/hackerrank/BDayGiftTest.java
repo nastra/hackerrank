@@ -1,6 +1,8 @@
 package com.nastra.hackerrank;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -13,13 +15,14 @@ public class BDayGiftTest {
     @Test
     public void testSimple() {
         BigInteger[] a = {new BigInteger("1")};
-        Assert.assertEquals(BDayGift.priceOfPhone(a), 0.5d);
+        Assert.assertTrue(BDayGift.priceOfPhone(a).equals(new BigDecimal(0.5)));
 
         BigInteger[] b = {new BigInteger("2")};
-        Assert.assertEquals(BDayGift.priceOfPhone(b), 1.0d);
+        Assert.assertTrue(BDayGift.priceOfPhone(b).equals(new BigDecimal("1.0")));
 
         BigInteger dec = new BigInteger("1000000000");
         BigInteger[] c = {dec};
-        Assert.assertEquals(BDayGift.priceOfPhone(c), 500000002.0d);
+        BigDecimal price = BDayGift.priceOfPhone(c);
+        Assert.assertTrue(price.equals(new BigDecimal("500000000.0")));
     }
 }
