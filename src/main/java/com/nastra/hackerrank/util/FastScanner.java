@@ -3,6 +3,7 @@ package com.nastra.hackerrank.util;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.math.BigInteger;
 import java.util.StringTokenizer;
 
 /**
@@ -62,6 +63,10 @@ public class FastScanner {
 
     public int nextInt() throws Exception {
         return Integer.parseInt(next());
+    }
+
+    public BigInteger nextBigInteger() throws Exception {
+        return new BigInteger(next());
     }
 
     public String nextLine() throws Exception {
