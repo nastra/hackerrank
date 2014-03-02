@@ -65,11 +65,47 @@ public class FastScanner {
         return Integer.parseInt(next());
     }
 
-    public BigInteger nextBigInteger() throws Exception {
-        return new BigInteger(next());
+    public int[] nextIntArray() throws Exception {
+        String[] line = reader.readLine().trim().split(" ");
+        int[] out = new int[line.length];
+        for (int i = 0; i < line.length; i++) {
+            out[i] = Integer.valueOf(line[i]);
+        }
+        return out;
+    }
+
+    public double[] nextDoubleArray() throws Exception {
+        String[] line = reader.readLine().trim().split(" ");
+        double[] out = new double[line.length];
+        for (int i = 0; i < line.length; i++) {
+            out[i] = Double.valueOf(line[i]);
+        }
+        return out;
+    }
+
+    public Integer[] nextIntegerArray() throws Exception {
+        String[] line = reader.readLine().trim().split(" ");
+        Integer[] out = new Integer[line.length];
+        for (int i = 0; i < line.length; i++) {
+            out[i] = Integer.valueOf(line[i]);
+        }
+        return out;
+    }
+
+    public BigInteger[] nextBigIngtegerArray() throws Exception {
+        String[] line = reader.readLine().trim().split(" ");
+        BigInteger[] out = new BigInteger[line.length];
+        for (int i = 0; i < line.length; i++) {
+            out[i] = new BigInteger(line[i]);
+        }
+        return out;
     }
 
     public String nextLine() throws Exception {
         return reader.readLine().trim();
+    }
+
+    public BigInteger nextBigInteger() throws Exception {
+        return new BigInteger(next());
     }
 }
