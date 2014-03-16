@@ -23,7 +23,7 @@ import java.io.InputStreamReader;
  * Input Format The first line of input contains two integers - N & T, where N is the length of the freeway and T is the number of test cases. The
  * next line has N space separated integers which represents the width array.
  * 
- * T test cases follow. Each test case containts two integers - i & j, where i is the index of segment through which Calvin enters the service lane
+ * T test cases follow. Each test case contains two integers - i & j, where i is the index of segment through which Calvin enters the service lane
  * and j is the index of the lane segment where he exits.
  * 
  * Output Format For each test case, print the vehicle type of the largest vehicle which can pass through.
