@@ -1,10 +1,10 @@
-hackerrank
+<a href="www.hackerrank.com">hackerrank</a>
 ==========
 
-Solutions to HackerRank problems that were written in Java & Python
+Solutions to <a href="www.hackerrank.com">HackerRank</a> problems that were written in <b>Java & Python</b>
 
 
-Searching Problems
+<a href="https://www.hackerrank.com/categories/algorithms/search">Searching Problems</a>
 ------------------
 - <a href="https://www.hackerrank.com/challenges/pairs">Pairs</a>
 - <a href="https://www.hackerrank.com/challenges/find-median">Find the Median</a>
@@ -15,19 +15,19 @@ Searching Problems
 - <a href="https://www.hackerrank.com/challenges/encryption">Encryption</a>
 
 
-Machine Learning Problems
+<a href="https://www.hackerrank.com/categories/ai/machine-learning">Machine Learning Problems</a>
 --------------------------
 - <a href="https://www.hackerrank.com/challenges/stat-warmup">Basic Statistics Warmup</a>
 - <a href="https://www.hackerrank.com/challenges/battery">Laptop Battery Life</a>
 
 
-Dynamic Programming Problems
+<a href="https://www.hackerrank.com/categories/algorithms/dynamic-programming">Dynamic Programming Problems</a>
 -----------------------------
 - <a href="https://www.hackerrank.com/challenges/stockmax">Stock Maximize</a>
 - <a href="https://www.hackerrank.com/challenges/candies">Candies</a>
 
 
-Math Problems
+<a href="https://www.hackerrank.com/categories/algorithms/maths">Math Problems</a>
 --------------
 - <a href="https://www.hackerrank.com/challenges/bday-gift">BDay Gift</a>
 
@@ -38,11 +38,13 @@ Math Problems
 - <a href="https://www.hackerrank.com/contests/codesprint5/challenges/matrix-tracing">Matrix Tracing</a>
 - <a href="https://www.hackerrank.com/contests/codesprint5/challenges/special-multiple">Special Multiple</a>
 
+
 <a href="https://www.hackerrank.com/contests/nov13">20/20 Hack November 2013</a>
 ------------------------
 - <a href="https://www.hackerrank.com/contests/nov13/challenges/utopian-tree">Utopian Tree</a>
 - <a href="https://www.hackerrank.com/contests/nov13/challenges/bday-gift">BDay Gift</a>
 - <a href="https://www.hackerrank.com/contests/nov13/challenges/power-of-large-numbers">Power of Large Numbers</a>
+
 
 <a href="https://www.hackerrank.com/contests/feb14">20/20 Hack February 2014</a>
 ------------------------
@@ -51,6 +53,7 @@ Math Problems
 - <a href="https://www.hackerrank.com/contests/feb14/challenges/board-cutting">Cutting Boards</a>
 - <a href="https://www.hackerrank.com/contests/feb14/challenges/bike-racers">Bike Racers</a>
 - <a href="https://www.hackerrank.com/contests/feb14/challenges/library-query">Library Query</a>
+
 
 <a href="https://www.hackerrank.com/contests/mar14">20/20 Hack March 2014</a>
 ---------------------
