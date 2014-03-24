@@ -32,7 +32,7 @@ Math Problems
 - <a href="https://www.hackerrank.com/challenges/bday-gift">BDay Gift</a>
 
  
-Codesprint 5
+<a href="https://www.hackerrank.com/contests/codesprint5">Codesprint 5</a>
 ------------
 - <a href="https://www.hackerrank.com/contests/codesprint5/challenges/is-fibo">Is Fibo</a>
 - <a href="https://www.hackerrank.com/contests/codesprint5/challenges/matrix-tracing">Matrix Tracing</a>
@@ -44,7 +44,7 @@ Codesprint 5
 - <a href="https://www.hackerrank.com/contests/nov13/challenges/bday-gift">BDay Gift</a>
 - <a href="https://www.hackerrank.com/contests/nov13/challenges/power-of-large-numbers">Power of Large Numbers</a>
 
-20/20 Hack February 2014
+<a href="https://www.hackerrank.com/contests/feb14">20/20 Hack February 2014</a>
 ------------------------
 - <a href="https://www.hackerrank.com/contests/feb14/challenges/sherlock-and-watson">Sherlock and Watson</a>
 - <a href="https://www.hackerrank.com/contests/feb14/challenges/make-it-anagram">Make it Anagram</a>
@@ -52,7 +52,7 @@ Codesprint 5
 - <a href="https://www.hackerrank.com/contests/feb14/challenges/bike-racers">Bike Racers</a>
 - <a href="https://www.hackerrank.com/contests/feb14/challenges/library-query">Library Query</a>
 
-20/20 Hack March 2014
+<a href="https://www.hackerrank.com/contests/mar14">20/20 Hack March 2014</a>
 ---------------------
 - <a href="https://www.hackerrank.com/contests/mar14/challenges/sherlock-and-squares">Sherlock and Squares</a>
 - <a href="https://www.hackerrank.com/contests/mar14/challenges/manasa-loves-maths">Manasa loves Math</a>
