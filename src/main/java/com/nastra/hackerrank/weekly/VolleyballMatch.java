@@ -11,73 +11,79 @@ import java.util.StringTokenizer;
  * @author nastra - Eduard Tudenhoefner
  */
 public class VolleyballMatch {
-    private static BigInteger MOD = new BigInteger("1000000007");
+    private static long[][] dp = new long[25][25];
 
-    public static BigInteger solve(BigInteger a, BigInteger b) {
-        if (a.intValue() < 25 && b.intValue() < 25) {
-            return BigInteger.ZERO;
+    private static long MOD = 1000000007L;
+
+    public static long solve(int a, int b) {
+        if (a < 25 && b < 25) {
+            return 0;
         }
 
-        BigInteger winner = null;
-        BigInteger y = null;
-        if (a.compareTo(b) < 0) {
+        int winner = 0;
+        int loser = 0;
+        if (a < b) {
             winner = b;
-            y = a;
+            loser = a;
         } else {
             winner = a;
-            y = b;
+            loser = b;
         }
-        int diff = winner.intValue() - y.intValue();
-        if (diff == 1 || winner.intValue() == y.intValue()) {
-            return BigInteger.ZERO;
-        }
-
-        if (winner.intValue() > 25 && y.intValue() < 24) {
-            return BigInteger.ZERO;
+        int diff = winner - loser;
+        if (diff == 1 || winner == loser) {
+            return 0;
         }
 
-        if (y.intValue() == 24 && diff > 2) {
-            return BigInteger.ZERO;
+        if (winner > 25 && loser < 24) {
+            return 0;
         }
 
-        if (diff > 2 && winner.intValue() >= 25 && y.intValue() >= 25) {
-            return BigInteger.ZERO;
+        if (loser == 24 && diff > 2) {
+            return 0;
         }
 
-        BigInteger x = winner.subtract(BigInteger.ONE);
-        // return binomial(x.add(y), x);
-         System.out.println(binomial(x.add(y), x));
-        BigInteger[][] dp = new BigInteger[x.intValue() + 1][y.intValue() + 1];
-        return recursive(x, y, dp);
+        if (diff > 2 && winner >= 25 && loser >= 25) {
+            return 0;
+        }
+
+        diff = Math.max(winner, loser) - 24;
+        long result = recursive(Math.min(winner, 24), Math.min(loser, 24));
+        if (winner <= 25) {
+            return result;
+        }
+        diff -= 2;
+        result = (result * modpow(2, diff, MOD)) % MOD;
+        return result;
     }
 
-    private static BigInteger binomial(final BigInteger N, final BigInteger K) {
-        BigInteger ret = BigInteger.ONE;
-        for (int k = 0; k < K.intValue(); k++) {
-            ret = ret.multiply(N.subtract(BigInteger.valueOf(k))).divide(BigInteger.valueOf(k + 1)).mod(MOD);
-        }
-        return ret.mod(MOD);
+    static long modpow(int a, int b, long mod) {
+        if (b == 0)
+            return 1;
+        long ret = modpow(a, b / 2, mod);
+        ret = (ret * ret) % mod;
+        if (b % 2 == 1)
+            ret = (ret * a) % mod;
+        return ret;
     }
 
-    private static BigInteger recursive(BigInteger a, BigInteger b, BigInteger[][] dp) {
-        if (null != dp[a.intValue()][b.intValue()]) {
-            return dp[a.intValue()][b.intValue()];
+    private static long recursive(int a, int b) {
+        if (dp[a][b] > 0) {
+            return dp[a][b];
         }
-        if (BigInteger.ZERO.equals(a) || BigInteger.ZERO.equals(b)) {
-            dp[a.intValue()][b.intValue()] = BigInteger.ONE;
-            return dp[a.intValue()][b.intValue()];
+        if (a == 0 || b == 0) {
+            dp[a][b] = 1;
+            return dp[a][b];
         }
-        BigInteger x = recursive(a, b.subtract(BigInteger.ONE), dp).mod(MOD);
-        BigInteger y = recursive(a.subtract(BigInteger.ONE), b, dp).mod(MOD);
 
-        dp[a.intValue()][b.intValue()] = x.add(y).mod(MOD);
-        return dp[a.intValue()][b.intValue()];
+        dp[a][b] = (recursive(a, b - 1) + recursive(a - 1, b)) % MOD;
+        return dp[a][b];
     }
 
     public static void main(String[] args) throws Exception {
+        recursive(24, 24);
         FastScanner sc = new FastScanner(System.in);
-        BigInteger a = sc.nextBigInteger();
-        BigInteger b = sc.nextBigInteger();
+        int a = sc.nextInt();
+        int b = sc.nextInt();
         System.out.println(solve(a, b));
     }
 
