@@ -63,6 +63,13 @@ Solutions to <a href="www.hackerrank.com">HackerRank</a> problems that were writ
 - <a href="https://www.hackerrank.com/contests/mar14/challenges/the-indian-job">The Indian Job</a>
 - <a href="https://www.hackerrank.com/contests/mar14/challenges/tsp-grid">Traveling Salesman in a Grid</a>
 
+<a href="https://www.hackerrank.com/contests/w1/challenges">Daily Challenges - Week 1</a>
+---------------------------
+- <a href="https://www.hackerrank.com/contests/w1/challenges/maximizing-xor">Maximizing XOR</a>
+- <a href="https://www.hackerrank.com/contests/w1/challenges/volleyball-match">Volleyball Match</a>
+- <a href="https://www.hackerrank.com/contests/w1/challenges/randomness">Randomness</a>
+- <a href="https://www.hackerrank.com/contests/w1/challenges/bst-maintenance">BST Maintenance</a>
+
 
 Multiple 101 Hacks
 -------------------
