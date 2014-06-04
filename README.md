@@ -71,6 +71,12 @@ Solutions to <a href="www.hackerrank.com">HackerRank</a> problems that were writ
 - <a href="https://www.hackerrank.com/contests/w1/challenges/bst-maintenance">BST Maintenance</a>
 
 
+<a href="https://www.hackerrank.com/contests/w4/challenges">Daily Challenges - Week 4</a>
+---------------------------
+- <a href="https://www.hackerrank.com/contests/w4/challenges/palindrome-index">Palindrome Index</a>
+- <a href="https://www.hackerrank.com/contests/w4/challenges/crush">Algorithmic Crush</a>
+
+
 Multiple 101 Hacks
 -------------------
 - <a href="https://www.hackerrank.com/contests/101jan14/challenges/filling-jars">Filling Jars</a>
