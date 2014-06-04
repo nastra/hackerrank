@@ -66,28 +66,12 @@ public class AlgorithmicCrush {
         }
 
         public long max(int index) {
-            // long max = 0;
-            // long sum = 0;
-            // long max1 = 0;
-            // while (index > 0) {
-            // long val = tree[index];
-            // if (val > 0) {
-            // max1 += val;
-            // }
-            // sum += val;
-            // index -= index & -index;
-            // }
-            // for (int i = 0; i < tree.length; i++) {
-            // max = Math.max(max, tree[i]);
-            // }
-            // return max1;
             long max = 0;
             for (int i = tree.length - 1; i > 0; i--) {
                 max = Math.max(max, query(i));
             }
             return max;
         }
-
     }
 
     static class FastScanner {
