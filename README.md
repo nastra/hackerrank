@@ -75,6 +75,7 @@ Solutions to <a href="www.hackerrank.com">HackerRank</a> problems that were writ
 ---------------------------
 - <a href="https://www.hackerrank.com/contests/w4/challenges/palindrome-index">Palindrome Index</a>
 - <a href="https://www.hackerrank.com/contests/w4/challenges/crush">Algorithmic Crush</a>
+- <a href="https://www.hackerrank.com/contests/w4/challenges/lucy-and-flowers">Lucy and Flowers</a>
 
 
 Multiple 101 Hacks
