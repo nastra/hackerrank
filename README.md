@@ -1,9 +1,10 @@
-<a href="www.hackerrank.com">hackerrank</a>
+<a href="www.hackerrank.com">hackerrank</a> / <a href="www.codechef.com">CodeChef</a>
 ==========
 
-Solutions to <a href="www.hackerrank.com">HackerRank</a> problems that were written in <b>Java & Python</b>
+Solutions to <a href="www.hackerrank.com">HackerRank</a> and <a href="www.codechef.com">CodeChef</a> problems that were written in <b>Java & Python</b>
 
-
+HackerRank Problems
+===================
 <a href="https://www.hackerrank.com/categories/algorithms/search">Searching Problems</a>
 ------------------
 - <a href="https://www.hackerrank.com/challenges/pairs">Pairs</a>
@@ -89,3 +90,11 @@ Multiple 101 Hacks
 - <a href="https://www.hackerrank.com/contests/101nov13/challenges/service-lane">Service Lane</a>
 - <a href="https://www.hackerrank.com/contests/101nov13/challenges/dorsey-thief">Dorsey Thief</a>
 
+
+
+CodeChef
+========
+- <a href="http://www.codechef.com/problems/DIGJUMP/">Chef and Digit Jumps</a>
+- <a href="http://www.codechef.com/problems/CHEFZOT/">Chef and Subarray</a>
+- <a href="http://www.codechef.com/problems/FORGETPW/">Forgot Password</a>
+- <a href="http://www.codechef.com/problems/GUESS/">Guessing Game</a>
