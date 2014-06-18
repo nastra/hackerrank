@@ -6,37 +6,70 @@ import java.io.InputStreamReader;
 import java.math.BigInteger;
 import java.util.StringTokenizer;
 
+/**
+ * @see https://www.hackerrank.com/contests/w4/challenges/lucy-and-flowers
+ * @author nastra - Eduard Tudenhoefner
+ */
 public class LucyAndFlowers {
+    private static int MAX = 5001;
+    private static long[][] C;
+    private static long MOD = 1000000009;
 
-    static int countTrees(int numKeys) {
-        if (numKeys <= 1) {
-            return 1;
-        } else {
-            // there will be one value at the root, with whatever remains
-            // on the left and right each forming their own subtrees.
-            // Iterate through all the values that could be the root...
-            int sum = 0;
-            int left, right, root;
+    private static void generateBinomialCoefficients(int n) {
+        C = new long[n + 1][n + 1];
+        int i, j;
 
-            for (root = 1; root <= numKeys; root++) {
-                left = countTrees(root - 1);
-                right = countTrees(numKeys - root);
-
-                // number of possible trees with this root == left*right
-                sum += left * right;
+        for (i = 0; i <= n; i++) {
+            C[i][0] = 1;
+            for (j = 1; j <= i; j++) {
+                C[i][j] = C[i - 1][j - 1] + C[i - 1][j];
+                if (C[i][j] >= MOD) {
+                    C[i][j] -= MOD;
+                }
             }
-
-            return (sum);
         }
     }
 
+    public static long[] generateCatalan(int n, long module) {
+        long[] inv = generateReverse(n + 2, module);
+        long[] Catalan = new long[n];
+        Catalan[1] = 1;
+        for (int i = 1; i < n - 1; i++) {
+            Catalan[i + 1] = (((2 * (2 * i + 1) * inv[i + 2]) % MOD) * Catalan[i]) % MOD;
+        }
+        return Catalan;
+    }
+
+    public static long[] generateReverse(int upTo, long module) {
+        long[] result = new long[upTo];
+        if (upTo > 1)
+            result[1] = 1;
+        for (int i = 2; i < upTo; i++)
+            result[i] = (module - module / i * result[((int) (module % i))] % module) % module;
+        return result;
+    }
+
     public static void main(String[] args) throws Exception {
+        generateBinomialCoefficients(MAX);
+        long[] catalan = generateCatalan(MAX, MOD);
+        long[] ans = new long[MAX];
+        for (int i = 0; i < MAX; i++) {
+            long res = 0;
+            for (int j = 0; j <= i; j++) {
+                res += (C[i][j] * catalan[j]) % MOD;
+                if (res >= MOD) {
+                    res -= MOD;
+                }
+            }
+            ans[i] = res;
+        }
+
         FastScanner sc = new FastScanner(System.in);
         int T = sc.nextInt();
         while (T > 0) {
             T--;
-            int N = sc.nextInt();
-            System.out.println(countTrees(N));
+            int x = sc.nextInt();
+            System.out.println(ans[x]);
         }
     }
 
