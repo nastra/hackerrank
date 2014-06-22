@@ -26,6 +26,7 @@ HackerRank Problems
 -----------------------------
 - <a href="https://www.hackerrank.com/challenges/stockmax">Stock Maximize</a>
 - <a href="https://www.hackerrank.com/challenges/candies">Candies</a>
+- <a href="https://www.hackerrank.com/challenges/play-game">Play Game</a>
 
 
 <a href="https://www.hackerrank.com/categories/algorithms/maths">Math Problems</a>

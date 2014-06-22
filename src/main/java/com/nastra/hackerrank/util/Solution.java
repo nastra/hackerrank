@@ -112,5 +112,14 @@ public class Solution {
         public String nextLine() throws Exception {
             return reader.readLine().trim();
         }
+
+        public long[] nextLongArray() throws Exception {
+            String[] line = reader.readLine().trim().split(" ");
+            long[] out = new long[line.length];
+            for (int i = 0; i < line.length; i++) {
+                out[i] = Long.valueOf(line[i]);
+            }
+            return out;
+        }
     }
 }
