@@ -99,3 +99,7 @@ CodeChef
 - <a href="http://www.codechef.com/problems/CHEFZOT/">Chef and Subarray</a>
 - <a href="http://www.codechef.com/problems/FORGETPW/">Forgot Password</a>
 - <a href="http://www.codechef.com/problems/GUESS/">Guessing Game</a>
+- <a href="http://www.codechef.com/problems/COINS">Bytelandian Gold Coins</a>
+- <a href="http://www.codechef.com/problems/LUCKYSTR/">Little Elephant and Strings</a>
+- <a href="http://www.codechef.com/problems/HORSES/">Racing Horses</a>
+- <a href="http://www.codechef.com/problems/SUBANAGR/">Subanagrams</a>
