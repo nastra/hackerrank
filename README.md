@@ -78,6 +78,7 @@ HackerRank Problems
 - <a href="https://www.hackerrank.com/contests/w4/challenges/palindrome-index">Palindrome Index</a>
 - <a href="https://www.hackerrank.com/contests/w4/challenges/crush">Algorithmic Crush</a>
 - <a href="https://www.hackerrank.com/contests/w4/challenges/lucy-and-flowers">Lucy and Flowers</a>
+- <a href="https://www.hackerrank.com/contests/w4/challenges/lucy-and-flowers">Lucy and Flowers</a>
 - <a href="https://www.hackerrank.com/contests/w4/challenges/roy-and-alpha-beta-trees">Roy and Alpha-Beta Trees</a>
 
 
@@ -103,3 +104,9 @@ CodeChef
 - <a href="http://www.codechef.com/problems/LUCKYSTR/">Little Elephant and Strings</a>
 - <a href="http://www.codechef.com/problems/HORSES/">Racing Horses</a>
 - <a href="http://www.codechef.com/problems/SUBANAGR/">Subanagrams</a>
+- <a href="http://www.codechef.com/COOK48/problems/RRCOPY/">Copy-Paste</a>
+- <a href="http://www.codechef.com/COOK48/problems/RRSUM">SumQueries</a>
+- <a href="http://www.codechef.com/JULY14/problems/CSUB/">Count Substrings</a>
+- <a href="http://www.codechef.com/problems/DISHOWN">Dish Owner</a>
+- <a href="http://www.codechef.com/JULY14/problems/FROGV/">Chef and Frogs</a>
+- <a href="http://www.codechef.com/JULY14/problems/RETPO/">Reach the Point</a>

@@ -7,6 +7,11 @@ import java.io.PrintWriter;
 import java.math.BigInteger;
 import java.util.StringTokenizer;
 
+/**
+ * @see http://www.codechef.com/problems/DISHOWN
+ * @author nastra
+ * 
+ */
 public class DishOwner {
 
     public static void main(String[] args) throws Exception {
