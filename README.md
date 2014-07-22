@@ -65,7 +65,7 @@ HackerRank Problems
 - <a href="https://www.hackerrank.com/contests/mar14/challenges/the-indian-job">The Indian Job</a>
 - <a href="https://www.hackerrank.com/contests/mar14/challenges/tsp-grid">Traveling Salesman in a Grid</a>
 
-<a href="https://www.hackerrank.com/contests/w1/challenges">Daily Challenges - Week 1</a>
+<a href="https://www.hackerrank.com/contests/w1/challenges">Weekly Challenges - Week 1</a>
 ---------------------------
 - <a href="https://www.hackerrank.com/contests/w1/challenges/maximizing-xor">Maximizing XOR</a>
 - <a href="https://www.hackerrank.com/contests/w1/challenges/volleyball-match">Volleyball Match</a>
@@ -73,13 +73,20 @@ HackerRank Problems
 - <a href="https://www.hackerrank.com/contests/w1/challenges/bst-maintenance">BST Maintenance</a>
 
 
-<a href="https://www.hackerrank.com/contests/w4/challenges">Daily Challenges - Week 4</a>
+<a href="https://www.hackerrank.com/contests/w4/challenges">Weekly Challenges - Week 4</a>
 ---------------------------
 - <a href="https://www.hackerrank.com/contests/w4/challenges/palindrome-index">Palindrome Index</a>
 - <a href="https://www.hackerrank.com/contests/w4/challenges/crush">Algorithmic Crush</a>
 - <a href="https://www.hackerrank.com/contests/w4/challenges/lucy-and-flowers">Lucy and Flowers</a>
 - <a href="https://www.hackerrank.com/contests/w4/challenges/lucy-and-flowers">Lucy and Flowers</a>
 - <a href="https://www.hackerrank.com/contests/w4/challenges/roy-and-alpha-beta-trees">Roy and Alpha-Beta Trees</a>
+
+<a href="https://www.hackerrank.com/contests/w7">Weekly Challenges - Week 7</a>
+--------------------------
+- <a href="https://www.hackerrank.com/contests/w7/challenges/die-hard-3">Die Hard 3</a>
+- <a href="https://www.hackerrank.com/contests/w7/challenges/chocolate-in-box">Chocolate in Box</a>
+- <a href="https://www.hackerrank.com/contests/w7/challenges/string-function-calculation">String Function Calculation</a>
+- <a href="https://www.hackerrank.com/contests/w7/challenges/helix">The crazy helix</a>
 
 
 Multiple 101 Hacks
