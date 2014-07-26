@@ -3,6 +3,7 @@ package com.nastra.hackerrank.util;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.math.BigInteger;
 import java.util.StringTokenizer;
 
@@ -17,9 +18,12 @@ public class Solution {
 
     public static void main(String[] args) throws Exception {
         FastScanner sc = new FastScanner(System.in);
+        PrintWriter out = new PrintWriter(System.out);
+
+        out.close();
     }
 
-    static class FastScanner {
+    private static class FastScanner {
 
         private static BufferedReader reader;
         private static StringTokenizer tokenizer;
