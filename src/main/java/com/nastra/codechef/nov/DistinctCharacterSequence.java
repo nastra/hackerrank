@@ -8,25 +8,21 @@ import java.math.BigInteger;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.StringTokenizer;
+
 /**
  * @see http://www.codechef.com/NOV14/problems/DISCHAR
  * @author nastra
- *
+ * 
  */
 public class DistinctCharacterSequence {
 
     public static int solve(String s) {
+        Set<Character> set = new HashSet<>();
         char[] a = s.toCharArray();
-        int result = 0;
         for (int i = 0; i < a.length; i++) {
-            Set<Character> set = new HashSet<>();
             set.add(a[i]);
-            for (int j = i + 1; j < a.length; j++) {
-                set.add(a[j]);
-            }
-            result = Math.max(result, set.size());
         }
-        return result;
+        return set.size();
     }
 
     public static void main(String[] args) throws Exception {
