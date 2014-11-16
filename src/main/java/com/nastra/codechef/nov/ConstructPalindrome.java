@@ -18,13 +18,44 @@ public class ConstructPalindrome {
         return getEliminateForPalindromeIndex(s) != -1;
     }
 
+    static boolean possible(String s) {
+        int i = 0;
+        int j = s.length() - 1;
+        int mismatchCount = 0;
+        while (i < j) {
+            if (s.charAt(i) == s.charAt(j)) {
+                i++;
+                j--;
+            } else {
+                mismatchCount++;
+                if (mismatchCount > 1)
+                    return false;
+                // override first preference if cannot find match for next
+                // character
+                if (s.charAt(i + 1) == s.charAt(j) && ((i + 2 >= j - 1) || s.charAt(i + 2) == s.charAt(j - 1))) {
+                    i++;
+                } else if (s.charAt(j - 1) == s.charAt(i) && ((i + 1 >= j - 2) || s.charAt(i + 1) == s.charAt(j - 2))) {
+                    j--;
+                } else {
+                    return false;
+                }
+            }
+        }
+        return mismatchCount <= 1;
+    }
+
     public static void main(String[] args) throws Exception {
         FastScanner sc = new FastScanner(System.in);
         PrintWriter out = new PrintWriter(System.out);
         int t = sc.nextInt();
         while (t > 0) {
             t--;
-            out.println(solve(sc.next()) ? "YES" : "NO");
+            String s = sc.next();
+            if (s.length() > 10000) {
+                out.println(possible(s) ? "YES" : "NO");
+            } else {
+                out.println(solve(s) ? "YES" : "NO");
+            }
         }
         out.close();
     }
