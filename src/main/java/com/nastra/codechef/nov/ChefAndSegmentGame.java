@@ -17,7 +17,54 @@ import java.util.StringTokenizer;
  */
 public class ChefAndSegmentGame {
 
-    public static double solve(double x, BigInteger k) {
+    private static BigInteger TWO = BigInteger.valueOf(2L);
+
+    public static double solve(double low, double high, BigInteger k) {
+        MaxPQ<Interval> heap = new MaxPQ<>(Interval.LENGTH_ORDER);
+        BigInteger i = TWO;
+        if (low != 0.0) {
+            i = i.add(BigInteger.ONE);
+        }
+        Interval in = new Interval(low, high);
+        heap.insert(in);
+        double mid = in.left + ((in.right - in.left) / 2.0);
+        Interval one = new Interval(in.left, mid);
+        Interval two = new Interval(mid, in.right);
+
+        BigInteger left = i;
+        BigInteger right = i;
+        while (i.compareTo(k) <= 0) {
+            while (i.compareTo(right) <= 0) {
+                in = heap.delMax();
+                mid = in.left + ((in.right - in.left) / 2.0);
+                one = new Interval(in.left, mid);
+                heap.insert(one);
+                i = i.add(BigInteger.ONE);
+                if (i.compareTo(k) == 0) {
+                    return one.right;
+                }
+                two = new Interval(mid, in.right);
+                heap.insert(two);
+            }
+            left = TWO.multiply(left);
+            right = TWO.multiply(right).add(BigInteger.ONE);
+            i = left;
+        }
+        // we went left initially
+        if (low == 0.0) {
+            if (k.mod(TWO).compareTo(BigInteger.ZERO) == 0) {
+                return one.right;
+            }
+            return two.left;
+        }
+
+        if (k.mod(TWO).compareTo(BigInteger.ZERO) == 0) {
+            return two.left;
+        }
+        return one.right;
+    }
+
+    public static double solveSlow(double x, BigInteger k) {
         MaxPQ<Interval> heap = new MaxPQ<>(Interval.LENGTH_ORDER);
         BigInteger count = BigInteger.ZERO;
         heap.insert(new Interval(0.0, x));
@@ -38,6 +85,29 @@ public class ChefAndSegmentGame {
         return one.right;
     }
 
+    static double solve(double x, BigInteger k) {
+        if (k.equals(BigInteger.ONE)) {
+            return x / 2;
+        }
+        // k = k.subtract(BigInteger.ONE);
+        if (contains(TWO, k)) {
+            return solve(0.0, x / 2, k);
+        }
+        return solve(x / 2, x, k);
+    }
+
+    private static boolean contains(BigInteger mid, BigInteger k) {
+        int cmp = k.compareTo(mid);
+        if (cmp == 0) {
+            return true;
+        }
+        if (cmp < 0) {
+            return false;
+        }
+        BigInteger val = BigInteger.valueOf(2L).multiply(mid);
+        return contains(val, k) || contains(val.add(BigInteger.ONE), k);
+    }
+
     public static void main(String[] args) throws Exception {
         FastScanner sc = new FastScanner(System.in);
         PrintWriter out = new PrintWriter(System.out);
@@ -46,7 +116,9 @@ public class ChefAndSegmentGame {
             t--;
             double x = sc.nextDouble();
             BigInteger k = sc.nextBigInteger();
+            out.println(String.format("%.9f", solveSlow(x, k)).replace(',', '.'));
             out.println(String.format("%.9f", solve(x, k)).replace(',', '.'));
+
         }
 
         out.close();
