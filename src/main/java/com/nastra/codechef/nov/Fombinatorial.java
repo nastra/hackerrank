@@ -1,0 +1,160 @@
+package com.nastra.codechef.nov;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.math.BigInteger;
+import java.util.StringTokenizer;
+
+public class Fombinatorial {
+
+    public static BigInteger solve(BigInteger n) {
+        BigInteger[] cache = new BigInteger[n.intValue() + 1];
+        cache[0] = BigInteger.ONE;
+        for (BigInteger i = BigInteger.ONE; i.compareTo(n) <= 0; i = i.add(BigInteger.ONE)) {
+            cache[i.intValue()] = cache[i.intValue() - 1].multiply(i.pow(i.intValue()));
+        }
+
+        return cache[n.intValue()];
+    }
+
+    private static BigInteger calculate(int n, int mod, int r) {
+        BigInteger MOD = BigInteger.valueOf(mod);
+        BigInteger N = BigInteger.valueOf(n);
+        BigInteger R = BigInteger.valueOf(r);
+
+        BigInteger[] cache = new BigInteger[N.intValue() + 1];
+        cache[0] = BigInteger.ONE;
+        for (BigInteger i = BigInteger.ONE; i.compareTo(N) <= 0; i = i.add(BigInteger.ONE)) {
+            cache[i.intValue()] = cache[i.intValue() - 1].multiply(i.pow(i.intValue()));
+        }
+        BigInteger a = cache[N.intValue()];
+        BigInteger b = cache[R.intValue()];
+        BigInteger c = cache[N.subtract(R).intValue()];
+
+        return a.divide((b.multiply(c))).mod(MOD);
+    }
+
+    public static void main(String[] args) throws Exception {
+        FastScanner sc = new FastScanner(System.in);
+        PrintWriter out = new PrintWriter(System.out);
+        int t = sc.nextInt();
+        while (t > 0) {
+            t--;
+            int n = sc.nextInt();
+            int m = sc.nextInt();
+            int q = sc.nextInt();
+            while (q > 0) {
+                q--;
+                int r = sc.nextInt();
+                out.println(calculate(n, m, r));
+            }
+        }
+        out.close();
+    }
+
+    private static class FastScanner {
+
+        private static BufferedReader reader;
+        private static StringTokenizer tokenizer;
+
+        public FastScanner(InputStream in) throws Exception {
+            reader = new BufferedReader(new InputStreamReader(in));
+            tokenizer = new StringTokenizer(reader.readLine().trim());
+        }
+
+        public int numTokens() throws Exception {
+            if (!tokenizer.hasMoreTokens()) {
+                tokenizer = new StringTokenizer(reader.readLine().trim());
+                return numTokens();
+            }
+            return tokenizer.countTokens();
+        }
+
+        public boolean hasNext() throws Exception {
+            if (!tokenizer.hasMoreTokens()) {
+                tokenizer = new StringTokenizer(reader.readLine().trim());
+                return hasNext();
+            }
+            return true;
+        }
+
+        public String next() throws Exception {
+            if (!tokenizer.hasMoreTokens()) {
+                tokenizer = new StringTokenizer(reader.readLine().trim());
+                return next();
+            }
+            return tokenizer.nextToken();
+        }
+
+        public double nextDouble() throws Exception {
+            return Double.parseDouble(next());
+        }
+
+        public float nextFloat() throws Exception {
+            return Float.parseFloat(next());
+        }
+
+        public long nextLong() throws Exception {
+            return Long.parseLong(next());
+        }
+
+        public int nextInt() throws Exception {
+            return Integer.parseInt(next());
+        }
+
+        public int[] nextIntArray() throws Exception {
+            String[] line = reader.readLine().trim().split(" ");
+            int[] out = new int[line.length];
+            for (int i = 0; i < line.length; i++) {
+                out[i] = Integer.valueOf(line[i]);
+            }
+            return out;
+        }
+
+        public double[] nextDoubleArray() throws Exception {
+            String[] line = reader.readLine().trim().split(" ");
+            double[] out = new double[line.length];
+            for (int i = 0; i < line.length; i++) {
+                out[i] = Double.valueOf(line[i]);
+            }
+            return out;
+        }
+
+        public Integer[] nextIntegerArray() throws Exception {
+            String[] line = reader.readLine().trim().split(" ");
+            Integer[] out = new Integer[line.length];
+            for (int i = 0; i < line.length; i++) {
+                out[i] = Integer.valueOf(line[i]);
+            }
+            return out;
+        }
+
+        public BigInteger[] nextBigIngtegerArray() throws Exception {
+            String[] line = reader.readLine().trim().split(" ");
+            BigInteger[] out = new BigInteger[line.length];
+            for (int i = 0; i < line.length; i++) {
+                out[i] = new BigInteger(line[i]);
+            }
+            return out;
+        }
+
+        public BigInteger nextBigInteger() throws Exception {
+            return new BigInteger(next());
+        }
+
+        public String nextLine() throws Exception {
+            return reader.readLine().trim();
+        }
+
+        public long[] nextLongArray() throws Exception {
+            String[] line = reader.readLine().trim().split(" ");
+            long[] out = new long[line.length];
+            for (int i = 0; i < line.length; i++) {
+                out[i] = Long.valueOf(line[i]);
+            }
+            return out;
+        }
+    }
+}
