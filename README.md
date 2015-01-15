@@ -1,4 +1,4 @@
-<a href="www.hackerrank.com">hackerrank</a> / <a href="www.codechef.com">CodeChef</a>
+<a href="http://www.hackerrank.com">hackerrank</a> / <a href="http://www.codechef.com">CodeChef</a>
 ==========
 
 Solutions to <a href="www.hackerrank.com">HackerRank</a> and <a href="www.codechef.com">CodeChef</a> problems that were written in <b>Java & Python</b>
