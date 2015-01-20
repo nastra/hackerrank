@@ -5,6 +5,11 @@
 *.war
 *.ear
 /target/
+.DS_Store
+*.iml
+*.ipr
+*.iws
+
 
 .project
 .classpath
