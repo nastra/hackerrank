@@ -1,4 +1,4 @@
-package com.nastra.codechef.feb2015;
+package com.nastra.codechef.march2015;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -7,88 +7,47 @@ import java.io.PrintWriter;
 import java.math.BigInteger;
 import java.util.StringTokenizer;
 
-/**
- * @see http://www.codechef.com/FEB15/problems/STFM
- * @author Eduard Tudenhoefner - nastra
- *
- */
-public class ChefAndStrangeFormula {
-	static BigInteger[] dp = new BigInteger[7000 + 1];
-	static BigInteger[] cache = new BigInteger[7000 + 1];
-	static BigInteger TWO = BigInteger.valueOf(2L);
+public class Main {
+	public static int solve(String s, int k, int left, int right) {
+		int n = s.length();
 
-	public static BigInteger solve(BigInteger[] in, BigInteger mod) {
-		BigInteger sum = BigInteger.ZERO;
-		for (BigInteger val : in) {
-			sum = sum.add(f(val.longValue(), mod.longValue()));
-		}
-		return sum.mod(mod);
+		int totalSubstrings = n * (n - 1) / 2 + n;
+		return -1;
 	}
 
-	static BigInteger f(long x, long mod) {
-		BigInteger res = BigInteger.ZERO;
-		for (int i = 1; i <= x; i++) {
-			// BigInteger a =
-			// BigInteger.valueOf(i).multiply(factorial(i).add(BigInteger.valueOf(x)));
-			BigInteger a = BigInteger.valueOf(i).multiply(F(i).add(BigInteger.valueOf(x)));
-
-			res = res.add(a);
+	static public String getSubstrings(String word) {
+		String str = "", substr = "";
+		for (int i = 0; i < word.length(); i++) {
+			for (int j = 0; i + j <= word.length(); j++) {
+				substr = word.substring(j, i + j);
+				if ("".equals(substr))
+					continue;
+				str += substr;
+				str += "\n";
+			}
 		}
-
-		return res;
-	}
-
-	public static BigInteger F(long n) {
-		long a = 0;
-		long s = 0;
-		BigInteger P = BigInteger.ONE;
-		BigInteger Q = BigInteger.ONE;
-		long b = 1;
-		for (int i = fL2((int) (n / 2)); i >= 0; i--) {
-			a = n >> i;
-			s = s + a / 2;
-			a = a - 1 | 1;
-			P = Q.multiply(P);
-			Q = OddP(a, b).multiply(Q);
-			b = a + 2;
-		}
-		return Q.multiply(P).shiftLeft((int) s);
-	}
-
-	private static BigInteger OddP(long a, long b) {
-		if (a == b)
-			return BigInteger.valueOf(a);
-		long m = (a + b) / 2;
-		m += m & 1;
-		return OddP(a, m + 1).multiply(OddP(m - 1, b));
-	}
-
-	private static int fL2(int n) {
-		int i = -1;
-		for (; n > 0; n /= 2)
-			i++;
-		return i;
-	}
-
-	public static BigInteger factorial(int n) {
-		if (n == 0) {
-			return BigInteger.ONE;
-		} else if (n < dp.length && dp[n] != null) {
-			return dp[n];
-		}
-		if (n >= dp.length) {
-			return BigInteger.valueOf(n).multiply(factorial(n - 1));
-		}
-		return dp[n] = BigInteger.valueOf(n).multiply(factorial(n - 1));
+		return str + word;
 	}
 
 	public static void main(String[] args) throws Exception {
 		FastScanner sc = new FastScanner(System.in);
 		PrintWriter out = new PrintWriter(System.out);
-		int n = sc.nextInt();
-		BigInteger mod = sc.nextBigInteger();
-		BigInteger[] in = sc.nextBigIngtegerArray();
-		out.println(solve(in, mod));
+		out.println(getSubstrings(sc.next()));
+		// int t = sc.nextInt();
+		// while (t > 0) {
+		// t--;
+		// int n = sc.nextInt();
+		// int k = sc.nextInt();
+		// int q = sc.nextInt();
+		// String s = sc.nextLine();
+		// while (q > 0) {
+		// q--;
+		// int left = sc.nextInt();
+		// int right = sc.nextInt();
+		// out.println(solve(s, k, left, right));
+		// }
+		// }
+
 		out.close();
 	}
 

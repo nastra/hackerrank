@@ -1,95 +1,57 @@
-package com.nastra.codechef.feb2015;
+package com.nastra.google.codejam2014.qualification;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.math.BigInteger;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.StringTokenizer;
 
-/**
- * @see http://www.codechef.com/FEB15/problems/STFM
- * @author Eduard Tudenhoefner - nastra
- *
- */
-public class ChefAndStrangeFormula {
-	static BigInteger[] dp = new BigInteger[7000 + 1];
-	static BigInteger[] cache = new BigInteger[7000 + 1];
-	static BigInteger TWO = BigInteger.valueOf(2L);
+public class MagicTrick {
+	public static String solve(Set<Integer> a, Set<Integer> b) {
+		Set<Integer> intersection = new HashSet<>(a); // use the copy
+														// constructor
+		intersection.retainAll(b);
+		if (intersection.size() == 1) {
+			for (Integer val : intersection) {
+				return val.toString();
+			}
 
-	public static BigInteger solve(BigInteger[] in, BigInteger mod) {
-		BigInteger sum = BigInteger.ZERO;
-		for (BigInteger val : in) {
-			sum = sum.add(f(val.longValue(), mod.longValue()));
+		} else if (intersection.size() > 1) {
+			return "Bad magician!";
 		}
-		return sum.mod(mod);
-	}
-
-	static BigInteger f(long x, long mod) {
-		BigInteger res = BigInteger.ZERO;
-		for (int i = 1; i <= x; i++) {
-			// BigInteger a =
-			// BigInteger.valueOf(i).multiply(factorial(i).add(BigInteger.valueOf(x)));
-			BigInteger a = BigInteger.valueOf(i).multiply(F(i).add(BigInteger.valueOf(x)));
-
-			res = res.add(a);
-		}
-
-		return res;
-	}
-
-	public static BigInteger F(long n) {
-		long a = 0;
-		long s = 0;
-		BigInteger P = BigInteger.ONE;
-		BigInteger Q = BigInteger.ONE;
-		long b = 1;
-		for (int i = fL2((int) (n / 2)); i >= 0; i--) {
-			a = n >> i;
-			s = s + a / 2;
-			a = a - 1 | 1;
-			P = Q.multiply(P);
-			Q = OddP(a, b).multiply(Q);
-			b = a + 2;
-		}
-		return Q.multiply(P).shiftLeft((int) s);
-	}
-
-	private static BigInteger OddP(long a, long b) {
-		if (a == b)
-			return BigInteger.valueOf(a);
-		long m = (a + b) / 2;
-		m += m & 1;
-		return OddP(a, m + 1).multiply(OddP(m - 1, b));
-	}
-
-	private static int fL2(int n) {
-		int i = -1;
-		for (; n > 0; n /= 2)
-			i++;
-		return i;
-	}
-
-	public static BigInteger factorial(int n) {
-		if (n == 0) {
-			return BigInteger.ONE;
-		} else if (n < dp.length && dp[n] != null) {
-			return dp[n];
-		}
-		if (n >= dp.length) {
-			return BigInteger.valueOf(n).multiply(factorial(n - 1));
-		}
-		return dp[n] = BigInteger.valueOf(n).multiply(factorial(n - 1));
+		return "Volunteer cheated!";
 	}
 
 	public static void main(String[] args) throws Exception {
 		FastScanner sc = new FastScanner(System.in);
 		PrintWriter out = new PrintWriter(System.out);
-		int n = sc.nextInt();
-		BigInteger mod = sc.nextBigInteger();
-		BigInteger[] in = sc.nextBigIngtegerArray();
-		out.println(solve(in, mod));
+		int t = sc.nextInt();
+		for (int i = 1; i <= t; i++) {
+
+			int rowA = sc.nextInt();
+			Set<Integer> a = getSet(sc, rowA);
+			int rowB = sc.nextInt();
+			Set<Integer> b = getSet(sc, rowB);
+			out.println("Case #" + i + ": " + solve(a, b));
+		}
+
 		out.close();
+	}
+
+	private static Set<Integer> getSet(FastScanner sc, int row) throws Exception {
+		Set<Integer> set = new HashSet<>();
+		for (int j = 1; j <= 4; j++) {
+			int[] a = sc.nextIntArray();
+			if (j == row) {
+				for (int val : a) {
+					set.add(val);
+				}
+			}
+		}
+		return set;
 	}
 
 	private static class FastScanner {

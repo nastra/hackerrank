@@ -5,9 +5,89 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.math.BigInteger;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
 import java.util.StringTokenizer;
 
 public class Str {
+	static Map<Character, LinkedList<Integer>> map = new HashMap<>();
+
+	private static void preprocess(String s) {
+		for (int i = 0; i < s.length(); i++) {
+			char c = s.charAt(i);
+			Character ch = Character.valueOf(c);
+			if (!map.containsKey(ch)) {
+				map.put(ch, new LinkedList<Integer>());
+			}
+			map.get(ch).add(i);
+		}
+	}
+
+	private static int eff(String s, char a, char b, int left, int right) {
+		int res = 0;
+		LinkedList<Integer> first = map.get(a);
+		LinkedList<Integer> second = map.get(b);
+
+		int start = findStart(first, 0, left);
+
+		int prev = 0;
+		// TODO: still not efficient enough
+
+		while (start < first.size() && first.get(start) <= right) {
+			int start2 = 0;
+			int j = prev;
+			while (j < second.size()) {
+				if (second.get(j) >= first.get(start) && second.get(j) > left) {
+					break;
+				}
+				j++;
+			}
+			start2 = j;
+			prev = start2;
+
+			while (start2 < second.size() && second.get(start2) <= right) {
+				res++;
+				start2++;
+			}
+			start++;
+		}
+
+		return res;
+	}
+
+	static int findStart(LinkedList<Integer> list, int i, int index) {
+		// WRONG & still times out
+		// int low = i;
+		// int high = list.size() - 1;
+		// int res = i;
+		// while (low <= high) {
+		// int mid = low + (high - low) / 2;
+		// if (list.get(mid) <= index) {
+		// res = mid;
+		// low = mid + 1;
+		// } else {
+		// high = mid - 1;
+		// }
+		// }
+		//
+		// return res;
+
+		while (i < list.size() && list.get(i) < index) {
+			i++;
+		}
+		return i;
+
+	}
+
+	static int findStart(LinkedList<Integer> list, int i, int index, int start1) {
+		while (i < list.size() && list.get(i) < index && list.get(i) < start1) {
+			i++;
+		}
+		return i;
+
+	}
+
 	public static int solve(String s, char a, char b, int left, int right) {
 		int res = 0;
 		char[] in = s.toCharArray();
@@ -60,6 +140,7 @@ public class Str {
 		FastScanner sc = new FastScanner(System.in);
 		PrintWriter out = new PrintWriter(System.out);
 		String s = sc.next();
+		preprocess(s);
 		int q = sc.nextInt();
 		while (q > 0) {
 			q--;
@@ -69,7 +150,9 @@ public class Str {
 			int right = sc.nextInt() - 1;
 			// out.println(solve(s, a.toCharArray()[0], b.toCharArray()[0],
 			// left, right));
-			out.println(solveEff(s, a.toCharArray()[0], b.toCharArray()[0], left, right));
+			// out.println(solveEff(s, a.toCharArray()[0], b.toCharArray()[0],
+			// left, right));
+			out.println(eff(s, a.toCharArray()[0], b.toCharArray()[0], left, right));
 		}
 
 		out.close();
