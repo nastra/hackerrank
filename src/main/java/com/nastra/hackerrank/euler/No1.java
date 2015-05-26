@@ -7,6 +7,11 @@ import java.io.PrintWriter;
 import java.math.BigInteger;
 import java.util.StringTokenizer;
 
+/**
+ * @see https://www.hackerrank.com/contests/projecteuler/challenges/euler001
+ * @author nastra
+ *
+ */
 public class No1 {
 
 	private static long sum(long n) {
@@ -15,7 +20,7 @@ public class No1 {
 
 	public static long solve(int n) {
 		n--;
-		return sum(n / 3) * 3 + sum(n / 5) * 5 - sum(n / 15)*15;
+		return sum(n / 3) * 3 + sum(n / 5) * 5 - sum(n / 15) * 15;
 	}
 
 	public static void main(String[] args) throws Exception {
@@ -134,4 +139,3 @@ public class No1 {
 		}
 	}
 }
-

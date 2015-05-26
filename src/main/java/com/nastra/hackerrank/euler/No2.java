@@ -7,17 +7,22 @@ import java.io.PrintWriter;
 import java.math.BigInteger;
 import java.util.StringTokenizer;
 
+/**
+ * @see https://www.hackerrank.com/contests/projecteuler/challenges/euler002
+ * @author nastra
+ *
+ */
 public class No2 {
 	public static long solve(long n) {
 		long a = 0;
 		long b = 1;
 		long sumEven = 0;
-		while(b<n) {
+		while (b < n) {
 			long tmp = a;
 			a = b;
-			b = tmp+b;
-			if(b%2==0 && b < n) {
-				sumEven+= b;
+			b = tmp + b;
+			if (b % 2 == 0 && b < n) {
+				sumEven += b;
 			}
 		}
 		return sumEven;
@@ -27,7 +32,7 @@ public class No2 {
 		FastScanner sc = new FastScanner(System.in);
 		PrintWriter out = new PrintWriter(System.out);
 		int t = sc.nextInt();
-		while(t>0) {
+		while (t > 0) {
 			t--;
 			out.println(solve(sc.nextLong()));
 		}
