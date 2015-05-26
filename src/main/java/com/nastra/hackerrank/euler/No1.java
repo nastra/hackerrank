@@ -1,4 +1,4 @@
-package euler;
+package com.nastra.hackerrank.euler;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
